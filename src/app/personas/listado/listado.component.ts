@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Persona } from '../interfaces/persona.interface';
+import { PersonasService } from '../services/personas.service';
 
 @Component({
   selector: 'app-listado',
@@ -7,5 +8,11 @@ import { Persona } from '../interfaces/persona.interface';
   styleUrls: ['./listado.component.css']
 })
 export class ListadoComponent {
-  @Input() personas:Persona[]=[]
+  //@Input() personas:Persona[]=[]
+  get personas():Persona[]{
+    return this.personasService.personas;
+  }
+  constructor(private personasService:PersonasService){
+
+  }
 }
