@@ -1,0 +1,12 @@
+<p>Listado de personas</p>
+<hr>
+<div class="row">
+    <div class="col">
+        <app-listado [personas]="personas"></app-listado>
+    </div>
+    <div class="col">
+        <app-add 
+        (onNuevaPersona)="agregarNuevaPersona( $event)"
+        [nuevo]="nuevo"></app-add>
+    </div>
+</div>
